@@ -15,7 +15,7 @@
 
 """
 
-def main(input_str_one: str, input_str_two: str):
+def main(input_str_one, input_str_two):
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
@@ -28,7 +28,7 @@ def main(input_str_one: str, input_str_two: str):
       else:
         if len(str_one) > len(str_two):
           return 2
-        if str_two == 'learn':
+        elif str_two == 'learn':
           return 3
     else:
       return 0
