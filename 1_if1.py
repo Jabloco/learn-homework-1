@@ -15,10 +15,6 @@
 """
 
 def main(input_age):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
     try:
       age = int(input_age)
       if 0 < age <= 6:
@@ -31,8 +27,6 @@ def main(input_age):
         print('Работа')
     except (Exception):
       print('Возраст введен не верно')
-
-    
 
 if __name__ == "__main__":
   age = input('Введите возраст: ')
