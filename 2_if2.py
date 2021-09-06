@@ -16,10 +16,6 @@
 """
 
 def main(input_str_one, input_str_two):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
     str_one = input_str_one
     str_two = input_str_two
     if type(str_one) is str and type(str_two) is str:
