@@ -11,11 +11,10 @@
 
 
 def hello_user():
-    """
-    Замените pass на ваш код
-    """
-    pass
-
+    is_good = ""
+    while is_good != "Хорошо":
+        print("Как дела?")
+        is_good = input()
     
 if __name__ == "__main__":
     hello_user()
