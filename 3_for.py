@@ -11,10 +11,7 @@
 """
 
 def main(input_list):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
+    
     total_sum = 0  # общая сумма баллов по школе
     total_grades = 0  # общее количество оценок по школе
     for dict in input_list:
@@ -22,6 +19,7 @@ def main(input_list):
         total_grades += len(dict['scores'])
         print(f"Средний балл по {dict['school_class']} классу составляет {round(sum(dict['scores']) / len(dict['scores']), 1)}")
     print(f'Средний балл по школе {round(total_sum / total_grades, 1)}')
+
 
 if __name__ == "__main__":
     list_of_dict = [  
