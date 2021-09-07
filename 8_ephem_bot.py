@@ -40,20 +40,20 @@ def talk_to_me(update, context):
         update.message.reply_text(user_text)
 
 def planet(input_planet):
-    if input_planet == 'mercury' or input_planet == 'меркурий':
-        return constellation(Mercury(datetime.date.today()))
-    elif input_planet == 'venus' or input_planet == 'венера':
-        return constellation(Venus(datetime.date.today()))
-    elif input_planet == 'mars' or input_planet == 'марс':
-        return constellation(Mars(datetime.date.today()))
-    elif input_planet == 'jupiter' or input_planet == 'юпитер':
-        return constellation(Jupiter(datetime.date.today()))
-    elif input_planet == 'saturn' or input_planet == 'сатурн':
-        return constellation(Saturn(datetime.date.today()))
-    elif input_planet == 'uranus' or input_planet == 'уран':
-        return constellation(Uranus(datetime.date.today()))
-    elif input_planet == 'neptune' or input_planet == 'нептун':
-        return constellation(Neptune(datetime.date.today()))
+    if input_planet == 'mercury':
+        return constellation(Mercury(datetime.date.today()))[1]
+    elif input_planet == 'venus':
+        return constellation(Venus(datetime.date.today()))[1]
+    elif input_planet == 'mars':
+        return constellation(Mars(datetime.date.today()))[1]
+    elif input_planet == 'jupiter':
+        return constellation(Jupiter(datetime.date.today()))[1]
+    elif input_planet == 'saturn':
+        return constellation(Saturn(datetime.date.today()))[1]
+    elif input_planet == 'uranus':
+        return constellation(Uranus(datetime.date.today()))[1]
+    elif input_planet == 'neptune':
+        return constellation(Neptune(datetime.date.today()))[1]
     else:
         return 'Я не знаю такой планеты'
     
