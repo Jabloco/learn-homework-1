@@ -16,17 +16,19 @@
 
 def main(input_age):
     try:
-      age = int(input_age)
-      if 0 < age <= 6:
+        age = int(input_age)
+    except TypeError as error:
+        print('Возраст введен не верно ', error)  
+    
+    if 0 < age <= 6:
         print('Детский сад')
-      elif 6 < age <= 17:
+    elif 6 < age <= 17:
         print('Школа')
-      elif 17 < age <= 23:
+    elif 17 < age <= 23:
         print('ВУЗ')
-      else:
+    else:
         print('Работа')
-    except (Exception):
-      print('Возраст введен не верно')
+    
 
 if __name__ == "__main__":
   age = input('Введите возраст: ')
