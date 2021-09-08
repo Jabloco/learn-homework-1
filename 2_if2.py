@@ -15,17 +15,14 @@
 
 """
 
-def main(input_str_one, input_str_two):
-    str_one = input_str_one
-    str_two = input_str_two
-    if type(str_one) is str and type(str_two) is str:
-      if str_one == str_two:
-        return 1
-      else:
-        if len(str_one) > len(str_two):
-          return 2
+def main(str_one,str_two):
+    if isinstance(str_one, str) and isinstance(str_two, str):
+        if str_one == str_two:
+            return 1
+        elif len(str_one) > len(str_two):
+                return 2
         elif str_two == 'learn':
-          return 3
+            return 3
     else:
       return 0
     
