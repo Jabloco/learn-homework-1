@@ -10,19 +10,21 @@
 * Посчитать и вывести средний балл по каждому классу.
 """
 
-def main(input_list):
+def main(input_classes_and_grades):
     
     total_sum = 0  # общая сумма баллов по школе
     total_grades = 0  # общее количество оценок по школе
-    for dict in input_list:
-        total_sum += sum(dict['scores'])
-        total_grades += len(dict['scores'])
-        print(f"Средний балл по {dict['school_class']} классу составляет {round(sum(dict['scores']) / len(dict['scores']), 1)}")
-    print(f'Средний балл по школе {round(total_sum / total_grades, 1)}')
+    for grades_in_class in input_classes_and_grades:
+        total_sum += sum(grades_in_class['scores'])
+        total_grades += len(grades_in_class['scores'])
+        class_midle_grade = round(sum(grades_in_class['scores']) / len(grades_in_class['scores']), 1)  # средний балл в классе
+        print(f"Средний балл по {grades_in_class['school_class']} классу составляет {class_midle_grade}")
+    school_midle_grade = round(total_sum / total_grades, 1)  # средний балл по школе
+    print(f'Средний балл по школе {school_midle_grade}')
 
 
 if __name__ == "__main__":
-    list_of_dict = [  
+    classes_and_grades = [  
         {'school_class': '1a', 'scores': [4,4,2,5,5,4,3]},
         {'school_class': '1b', 'scores': [5,4,2,5,2,5,5]},
         {'school_class': '2a', 'scores': [2,4,4,5,5,4]},
@@ -31,4 +33,4 @@ if __name__ == "__main__":
         {'school_class': '4a', 'scores': [3,4,3,5,2]}
     ]
     
-    main(list_of_dict)
+    main(classes_and_grades)
