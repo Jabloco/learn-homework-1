@@ -16,15 +16,14 @@
 """
 
 def main(str_one,str_two):
-    if isinstance(str_one, str) and isinstance(str_two, str):
-        if str_one == str_two:
-            return 1
-        elif len(str_one) > len(str_two):
-                return 2
-        elif str_two == 'learn':
-            return 3
-    else:
-      return 0
+    if not isinstance(str_one, str) or not isinstance(str_two, str):
+        return 0
+    if str_one == str_two:
+        return 1
+    if len(str_one) > len(str_two):
+        return 2
+    if str_two == 'learn':
+        return 3
     
     
 if __name__ == "__main__":
