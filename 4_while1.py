@@ -11,7 +11,7 @@
 
 
 def hello_user():
-    is_good = ""
+    is_good = None
     while is_good != "Хорошо":
         print("Как дела?")
         is_good = input()
