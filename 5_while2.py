@@ -22,14 +22,12 @@ questions_and_answers = {
     "Кто такой Гвидо ван Россум": "Великодушный пожизненный диктатор"
 }
 
+
 def ask_user():
     print('Для выхода введите: Хватит')
     user_question = input('Пользователь: ')
     while user_question != 'Хватит':  # выход по стоп-слову 'Хватит'
-        if user_question in questions_and_answers:
-            print('Программа: ', questions_and_answers[user_question])
-        else:
-            print('Программа: Мне нечего сказать')
+        print(f'Программа: {questions_and_answers.get(user_question, "Мне нечего сказать")}')
         user_question = input('Пользователь: ')
     
     
