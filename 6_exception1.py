@@ -12,7 +12,7 @@
 
 def hello_user():
     
-        is_good = ""
+        is_good = None
         while is_good != "Хорошо":
             try:
                 print("Как дела?")
