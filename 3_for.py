@@ -17,7 +17,7 @@ def main(input_classes_and_grades):
     for grades_in_class in input_classes_and_grades:
         total_sum += sum(grades_in_class['scores'])
         total_grades += len(grades_in_class['scores'])
-        class_midle_grade = round(sum(grades_in_class['scores']) / len(grades_in_class['scores']), 1)  # средний балл в классе
+        class_midle_grade = round(total_sum / total_grades, 1)  # средний балл в классе
         print(f"Средний балл по {grades_in_class['school_class']} классу составляет {class_midle_grade}")
     school_midle_grade = round(total_sum / total_grades, 1)  # средний балл по школе
     print(f'Средний балл по школе {school_midle_grade}')
