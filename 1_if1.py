@@ -17,20 +17,18 @@
 def main(input_age):
     try:
         age = int(input_age)
-    except ValueError as error:
-        print('Возраст введен не верно ', error)  
-    else:    
-        
-        if 0 < age <= 6:
-            print('Детский сад')
-        elif 6 < age <= 17:
-            print('Школа')
-        elif 17 < age <= 23:
-            print('ВУЗ')
-        else:
-            print('Работа')
+    except ValueError:
+        return 'Возраст введен не верно '
+    if 0 < age <= 6:
+        return 'Детский сад'
+    elif 6 < age <= 17:
+        return 'Школа'
+    elif 17 < age <= 23:
+        return 'ВУЗ'
+    else:
+        return 'Работа'
         
 
 if __name__ == "__main__":
   age = input('Введите возраст: ')
-  main(age)
+  print(main(age))
