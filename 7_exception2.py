@@ -23,16 +23,16 @@ def discounted(price, discount, max_discount=20):
     except (ValueError, TypeError) as error:
         return f'Что-то пошло не так: {error}'
 
-
     if discount >= max_discount:
         return price
-    else:
-        return price - (price * discount / 100)
+    
+    return price - (price * discount / 100)
 
 
 if __name__ == "__main__":
+    print(discounted(777, 150))
     print(discounted(100, -50, -105))
-    print(discounted(100, 2))
+    print(discounted(100, 15))
     print(discounted(100, "3"))
     print(discounted("100", "4.5"))
     print(discounted("five", 5))
