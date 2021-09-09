@@ -13,9 +13,11 @@
 
 """
 import logging
+
+import ephem
 import settings
 import datetime
-from ephem import *
+import ephem
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
@@ -34,28 +36,19 @@ def talk_to_me(update, context):
     user_text = update.message.text
     user_text_list = user_text.split()
     if user_text_list[0] == '/planet':
-        update.message.reply_text(planet(user_text_list[1].lower()))
+        update.message.reply_text(planet(user_text_list[1].capitalize()))
     else:
         print(user_text)
         update.message.reply_text(user_text)
 
+
 def planet(input_planet):
-    if input_planet == 'mercury':
-        return constellation(Mercury(datetime.date.today()))[1]
-    elif input_planet == 'venus':
-        return constellation(Venus(datetime.date.today()))[1]
-    elif input_planet == 'mars':
-        return constellation(Mars(datetime.date.today()))[1]
-    elif input_planet == 'jupiter':
-        return constellation(Jupiter(datetime.date.today()))[1]
-    elif input_planet == 'saturn':
-        return constellation(Saturn(datetime.date.today()))[1]
-    elif input_planet == 'uranus':
-        return constellation(Uranus(datetime.date.today()))[1]
-    elif input_planet == 'neptune':
-        return constellation(Neptune(datetime.date.today()))[1]
-    else:
+    try:
+        sky_body = getattr(ephem, input_planet)
+    except AttributeError:
         return 'Я не знаю такой планеты'
+
+    return ephem.constellation(sky_body(datetime.date.today()))[1]
     
 
 def main():
