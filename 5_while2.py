@@ -26,9 +26,8 @@ def ask_user():
     print('Для выхода введите: Хватит')
     user_question = input('Пользователь: ')
     while user_question != 'Хватит':  # выход по стоп-слову 'Хватит'
-        if user_question in questions_and_answers.keys():
-            print('Программа: ', end='')
-            print(questions_and_answers[user_question])
+        if user_question in questions_and_answers:
+            print('Программа: ', questions_and_answers[user_question])
         else:
             print('Программа: Мне нечего сказать')
         user_question = input('Пользователь: ')
