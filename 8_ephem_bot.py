@@ -37,11 +37,12 @@ def talk_to_me(update, context):
     user_text_list = user_text.split()
 
     if user_text_list[0] == '/planet':
-        if len(user_text_list) == 2:
+        length_user_text = len(user_text_list)
+        if length_user_text == 2:
             update.message.reply_text(planet(user_text_list[1].capitalize()))
-        elif len(user_text_list) > 2:
+        elif length_user_text > 2:
             update.message.reply_text('Много лишних слов')
-        elif len(user_text_list) == 1:
+        elif length_user_text == 1:
             update.message.reply_text('Не указана планета')
     else:
         print(user_text)
