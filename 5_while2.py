@@ -15,13 +15,21 @@
     
 """
 
-questions_and_answers = {}
+questions_and_answers = {
+    "Как дела": "Хорошо!",
+    "Что делаешь?": "Программирую",
+    "Откуда ты?": "Из Матрицы",
+    "Кто такой Гвидо ван Россум": "Великодушный пожизненный диктатор"
+}
 
-def ask_user(answers_dict):
-    """
-    Замените pass на ваш код
-    """
-    pass
+
+def ask_user():
+    print('Для выхода введите: Хватит')
+    user_question = input('Пользователь: ')
+    while user_question != 'Хватит':  # выход по стоп-слову 'Хватит'
+        print(f'Программа: {questions_and_answers.get(user_question, "Мне нечего сказать")}')
+        user_question = input('Пользователь: ')
+    
     
 if __name__ == "__main__":
-    ask_user(questions_and_answers)
+    ask_user()
